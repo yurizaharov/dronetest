@@ -1,0 +1,13 @@
+pipeline:
+  install:
+    image: node:14-alpine
+    commands:
+      - node -v
+      - npm -v
+      - npm install
+
+  testing:
+    image: node:14-alpine
+    group: testing
+    commands:
+      - npm run test

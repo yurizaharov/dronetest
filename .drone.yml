@@ -1,13 +1,14 @@
-pipeline:
-  install:
+kind: pipeline
+name: dronetest
+steps:
+  - name: install
     image: node:14-alpine
     commands:
-      - node -v
-      - npm -v
-      - npm install
+      - "node -v"
+      - "npm -v"
+      - "npm install"
 
-  testing:
+  - name: testing
     image: node:14-alpine
-    group: testing
     commands:
-      - npm run test
+      - "npm run test"
